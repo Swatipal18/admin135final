@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../index.css';
 import logo from '../../public/images/logo.png';
 import logo1 from '../../public/images/dashboard.png';
 import logo2 from '../../public/images/outlet.png';
@@ -16,6 +15,7 @@ import logo12 from '../../public/images/menu.png';
 import logo13 from '../../public/images/support.png';
 import logo14 from '../../public/images/setting.png';
 import { Link } from 'react-router-dom';
+
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const [isItemsDropdownOpen, setIsItemsDropdownOpen] = useState(false);
 
@@ -24,12 +24,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   return (
-
-
-
-
-
-
     <>
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         {/* Sidebar Header */}
@@ -63,33 +57,43 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <li className="active "><img src={logo1} alt="" />
               <Link to="/admin" className='text-decoration-none text-white ms-2'>Dashboard</Link> </li>
             <li> <img src={logo2} alt="" className='me-1' /> Franchise Management</li>
-            <li className="dropdown-trigger">
-              <img src={logo3} alt="" className="me-1" /> Items Management
-              <i className="fas fa-chevron-down ps-4" onClick={toggleItemsDropdown}></i>
+
+
+            <li className="d-flex align-items-center">
+              <img src={logo3} alt="" className="me-2" />
+              <div className="dropdown">
+                <button className="btn dropdown-toggle btn-transparent text-white " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Items Management
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <Link to="/All-Items" className='text-decoration-none text-dark nav-link'>All Items</Link>
+                  <Link to="/create-item" className='text-decoration-none text-dark'>Add New Item</Link>
+                  <a className="dropdown-item" href="#">Categories</a>
+                  <a className="dropdown-item" href="#">Sizes</a>
+                </div>
+              </div>
             </li>
-            {isItemsDropdownOpen && (
-              <ul className="dropdown">
-                <li className="dropdowns">All Items</li>
-                <li className="dropdowns">
-                  <Link to="/create-item" className='text-decoration-none text-white'>Create New Item</Link>
-                </li>
-                <li className="dropdowns">Categories</li>
-                <li className="dropdowns">Sizes</li>
-              </ul>
-            )}
+
+
+
             <li className="dropdown-trigger">
               <img src={logo4} alt="" className='me-1' /> Sales Management
               <i className="fas fa-chevron-down ps-4" onClick={toggleItemsDropdown}></i>
             </li>
+
+
+
             {isItemsDropdownOpen && (
               <ul className="dropdown">
                 <li className="dropdowns">All Staff</li>
                 <li className="dropdowns">
-                  <Link to="/create-item" className='text-decoration-none text-white'>Create New Staff </Link>
+                  <Link to="/create-staff" className='text-decoration-none text-white'>Create New Staff </Link>
                 </li>
 
               </ul>
             )}
+
+
             <li> <img src={logo5} alt="" className='me-1' /> Delivery Management</li>
             <li> <img src={logo6} alt="" className='me-1' /> User Management</li>
             <li> <img src={logo7} alt="" className='me-1' /> Staff Management</li>
@@ -104,7 +108,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
           </ul>
         </div>
-      </div>
+      </div >
     </>
   );
 };

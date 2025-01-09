@@ -2,8 +2,14 @@ import React from "react";
 import logo from "../../assets/Images/logo.png";
 import userLogo from "../../assets/Images/userLogo.png";
 import key from "../../assets/Images/key.png";
+import { useForm } from 'react-hook-form'
 
 const LoginForm = () => {
+    const { register, handleSubmit, reset } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
+    };
     return (
         <>
             <div className="container-fluid banner  ">
@@ -26,7 +32,7 @@ const LoginForm = () => {
                                                         <p className="text-center loginToAccount text-uppercase text-white">
                                                             Login to your account
                                                         </p>
-                                                        <form>
+                                                        <form action='' method='post' onSubmit={handleSubmit(onSubmit)}>
                                                             <div className="form-group py-2 userName d-flex">
                                                                 <img
                                                                     src={userLogo}
@@ -38,6 +44,7 @@ const LoginForm = () => {
                                                                     type="text"
                                                                     className="form-control bg-transparent rounded rounded-pill"
                                                                     placeholder="Enter Username"
+                                                                    {...register('email')}
                                                                 />
                                                             </div>
                                                             <div className="form-group userName py-2">
@@ -51,7 +58,9 @@ const LoginForm = () => {
                                                                     type="password"
                                                                     className="form-control bg-transparent rounded rounded-pill"
                                                                     placeholder="Enter Password"
+                                                                    {...register('password')}
                                                                 />
+
                                                             </div>
                                                             <button
                                                                 type="submit"

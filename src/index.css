@@ -8,6 +8,57 @@
     --backdround-color: #0B2545;
 }
 
+/* login */
+.bg-logoImg {
+    height: 100vh !important;
+    /* border: 2px solid ; */
+    background-image: url("./assets/Images/DeliveryPerson.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.banner {
+    background-image: url("./assets/Images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+    background-color: var(--backdround-color);
+}
+
+.loginButton {
+    color: #0B2545 !important;
+    font-size: small;
+}
+
+.login-Main-Div {
+    ::placeholder {
+        color: white !important;
+        font-size: 12px;
+        padding-left: 25px;
+    }
+
+}
+
+.login-round {
+    border-radius: 30px;
+
+    p {
+        font-size: 12px;
+    }
+}
+
+.userName {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 33%;
+        left: 2.5%;
+    }
+
+}
 
 /* Sidebar Styles */
 .sidebar {
@@ -111,7 +162,7 @@
     background-color: var(--backdround-color);
 }
 
-.dropdown {
+/* .dropdown {
     background-color: var(--secondary-color);
     list-style: none;
     padding-left: 0;
@@ -126,6 +177,34 @@
 
 .dropdown li:hover {
     background-color: var(--backdround-color);
+} */
+
+.items-dropdown {
+    position: relative;
+}
+
+.dropdown-select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding-right: 2rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    pointer-events: none;
+    color: white;
+}
+
+.dropdown-select:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Main Content Styles */
@@ -388,6 +467,42 @@
 .submit-btn:hover {
     background-color: #15293f;
 }
+
+/* Staff item  */
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.form-switch {
+    padding-left: 2.5em;
+}
+
+.form-check-input:checked {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* @media (max-width: 768px) {
+    .d-flex.justify-content-end {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-control,
+    .form-select {
+        width: 100% !important;
+    }
+} */
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
